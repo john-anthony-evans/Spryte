@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		52D2EFDE2EEDD3DA003D4E85 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */; };
+		52D2EFE02EEDD3E4003D4E85 /* DoorDash Consumer App.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2EFDF2EEDD3E4003D4E85 /* DoorDash Consumer App.icon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		52D2EF5C2EEDC1D5003D4E85 /* Spryte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spryte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Spryte.icon; sourceTree = "<group>"; };
+		52D2EFDF2EEDD3E4003D4E85 /* DoorDash Consumer App.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "DoorDash Consumer App.icon"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +39,8 @@
 		52D2EF532EEDC1D5003D4E85 = {
 			isa = PBXGroup;
 			children = (
+				52D2EFDF2EEDD3E4003D4E85 /* DoorDash Consumer App.icon */,
+				52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */,
 				52D2EF5E2EEDC1D5003D4E85 /* Spryte */,
 				52D2EF5D2EEDC1D5003D4E85 /* Products */,
 			);
@@ -109,6 +118,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D2EFDE2EEDD3DA003D4E85 /* Spryte.icon in Resources */,
+				52D2EFE02EEDD3E4003D4E85 /* DoorDash Consumer App.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +255,9 @@
 		52D2EF682EEDC1D8003D4E85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "DoorDash Consumer App";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K2XB837E84;
@@ -288,8 +300,9 @@
 		52D2EF692EEDC1D8003D4E85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "DoorDash Consumer App";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K2XB837E84;
