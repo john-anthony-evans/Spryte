@@ -13,8 +13,8 @@ This guide explains how to add new alternate app icons using Icon Composer (.ico
 1. Open **Icon Composer** (search in Spotlight or find in Xcode's Developer Tools)
 2. Design your icon with layers, translucency, and glass effects
 3. Save the file as `YourIconName.icon` (e.g., `MyNewIcon.icon`)
+4. Export using File > Export. Ensure you select 'Appearance All'. Then Export... This will generate all the previews in a folder correctly for the steps below.  
 
-   > **Important:** Do NOT use spaces in the name. Use `MyNewIcon` not `My New Icon`
 
 ## Step 2: Add the .icon File to the Project
 
