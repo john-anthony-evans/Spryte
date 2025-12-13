@@ -16,35 +16,37 @@ struct SplashTab: View {
     private let splashFolderName = "Splash Screens"
 
     var body: some View {
-        ZStack {
-            if splashImages.isEmpty {
-                ContentUnavailableView(
-                    "No Splash Screens",
-                    systemImage: "photo.on.rectangle",
-                    description: Text("Add a \"Splash Screens\" folder to the project with PNG images.")
-                )
-            } else {
-                // Paging TabView for horizontal swiping
-                TabView(selection: $currentIndex) {
-                    ForEach(Array(splashImages.enumerated()), id: \.offset) { index, image in
-                        SplashScreenImage(image: image)
-                            .tag(index)
-                    }
-                }
-                .tabViewStyle(.page(indexDisplayMode: isUIHidden ? .never : .automatic))
-                .ignoresSafeArea()
-
-                // Tap gesture layer
-                Color.clear
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        withAnimation(.easeInOut(duration: 0.25)) {
-                            isUIHidden.toggle()
+        NavigationStack {
+            ZStack {
+                if splashImages.isEmpty {
+                    ContentUnavailableView(
+                        "No Splash Screens",
+                        systemImage: "app.background.dotted",
+                        description: Text("Add a \"Splash Screens\" folder to the project with PNG images.")
+                    )
+                } else {
+                    // Paging TabView for horizontal swiping
+                    TabView(selection: $currentIndex) {
+                        ForEach(Array(splashImages.enumerated()), id: \.offset) { index, image in
+                            SplashScreenImage(image: image)
+                                .tag(index)
                         }
                     }
+                    .tabViewStyle(.page(indexDisplayMode: isUIHidden ? .never : .automatic))
+                    .ignoresSafeArea()
+
+                    // Tap gesture layer
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            withAnimation(.easeInOut(duration: 0.25)) {
+                                isUIHidden.toggle()
+                            }
+                        }
+                }
             }
+            .background(Color.black)
         }
-        .background(Color.black)
         .onAppear {
             loadSplashImages()
         }

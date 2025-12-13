@@ -7,9 +7,34 @@
 
 import SwiftUI
 
+extension Color: @retroactive RawRepresentable {
+    public init?(rawValue: String) {
+        guard let data = Data(base64Encoded: rawValue),
+              let uiColor = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: data) else {
+            return nil
+        }
+        self = Color(uiColor)
+    }
+
+    public var rawValue: String {
+        guard let data = try? NSKeyedArchiver.archivedData(withRootObject: UIColor(self), requiringSecureCoding: false) else {
+            return ""
+        }
+        return data.base64EncodedString()
+    }
+
+    var isDark: Bool {
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0
+        UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: nil)
+        let luminance = 0.299 * red + 0.587 * green + 0.114 * blue
+        return luminance < 0.5
+    }
+}
+
 struct IconsTab: View {
     @Binding var appearanceMode: AppearanceMode
     @State private var iconManager = IconManager()
+    @AppStorage("backgroundColor") private var backgroundColor: Color = .white
 
     private let columns = [
         GridItem(.adaptive(minimum: 100, maximum: 140), spacing: 16)
@@ -45,7 +70,8 @@ struct IconsTab: View {
                                     icon: icon,
                                     style: iconManager.selectedStyle,
                                     isSelected: iconManager.isSelected(icon),
-                                    isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon)
+                                    isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
+                                    backgroundColor: backgroundColor
                                 )
                                 .onTapGesture {
                                     iconManager.setIcon(icon)
@@ -56,19 +82,30 @@ struct IconsTab: View {
                     }
                 }
             }
-            .navigationTitle("App Icons")
+            .background(backgroundColor)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Picker("Appearance", selection: $appearanceMode) {
-                            ForEach(AppearanceMode.allCases) { mode in
-                                Label(mode.displayName, systemImage: mode.icon).tag(mode)
-                            }
-                        }
-                    } label: {
-                        Image(systemName: appearanceMode.icon)
-                    }
+                ToolbarItem(placement: .principal) {
+                    Text("Select an App Icon")
+                        .font(.headline)
+                        .padding(8)
+                        .glassEffect()
                 }
+                ToolbarItem(placement: .topBarTrailing) {
+                    ColorPicker("Background", selection: $backgroundColor, supportsOpacity: false)
+                        .labelsHidden()
+                }
+
+                // ToolbarItem(placement: .topBarTrailing) {
+                //     Menu {
+                //         Picker("Appearance", selection: $appearanceMode) {
+                //             ForEach(AppearanceMode.allCases) { mode in
+                //                 Label(mode.displayName, systemImage: mode.icon).tag(mode)
+                //             }
+                //         }
+                //     } label: {
+                //         Image(systemName: appearanceMode.icon)
+                //     }
+                // }
 
                 ToolbarSpacer(.fixed, placement: .topBarTrailing)
 
@@ -101,9 +138,10 @@ struct IconGridItem: View {
     let style: IconStyle
     let isSelected: Bool
     let isLoading: Bool
+    let backgroundColor: Color
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(alignment: .center, spacing: 8) {
             ZStack {
                 // Icon preview from file
                 // iOS 26 Icon Composer exports already include the rounded shape
@@ -142,12 +180,15 @@ struct IconGridItem: View {
                 }
                 Text(icon.name)
                     .font(.caption2)
-                    .foregroundStyle(.primary)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
             }
-            .frame(width: 110, height: 32, alignment: .top)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .glassEffect()
+            .frame(maxWidth: 110, minHeight: 44, alignment: .top)
         }
+        .frame(maxHeight: .infinity, alignment: .top)
         .contentShape(Rectangle())
     }
 }
