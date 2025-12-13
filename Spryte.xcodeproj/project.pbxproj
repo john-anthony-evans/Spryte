@@ -13,6 +13,7 @@
 
 /* Begin PBXFileReference section */
 		52D2EF5C2EEDC1D5003D4E85 /* Spryte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spryte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D2EFE12EEDE000003D4E85 /* Instructions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Instructions.md; sourceTree = "<group>"; };
 		52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Spryte.icon; sourceTree = "<group>"; };
 		52D2EFDF2EEDD3E4003D4E85 /* DoorDashConsumerApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DoorDashConsumerApp.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +40,7 @@
 		52D2EF532EEDC1D5003D4E85 = {
 			isa = PBXGroup;
 			children = (
+				52D2EFE12EEDE000003D4E85 /* Instructions.md */,
 				52D2EFDF2EEDD3E4003D4E85 /* DoorDashConsumerApp.icon */,
 				52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */,
 				52D2EF5E2EEDC1D5003D4E85 /* Spryte */,
