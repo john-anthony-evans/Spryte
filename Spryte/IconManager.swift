@@ -35,16 +35,28 @@ struct IconItem: Identifiable, Hashable {
     // Maps style to the file URL for that style's preview
     let previewURLs: [IconStyle: URL]
 
+    /// User-friendly display name (hyphens replaced with spaces)
+    var displayName: String {
+        name.replacingOccurrences(of: "-", with: " ")
+    }
+
     func previewImage(for style: IconStyle) -> UIImage? {
         guard let url = previewURLs[style] else { return nil }
         return UIImage(contentsOfFile: url.path)
     }
 }
 
+struct IconSection: Identifiable {
+    let id: String
+    let name: String
+    var icons: [IconItem]
+}
+
 @Observable
 @MainActor
 final class IconManager {
     var icons: [IconItem] = []
+    var sections: [IconSection] = []
     var currentIconName: String?
     var selectedStyle: IconStyle = .default
     var isChangingIcon = false
@@ -58,6 +70,16 @@ final class IconManager {
     init() {
         currentIconName = UIApplication.shared.alternateIconName
         loadAvailableIcons()
+    }
+
+    private func loadManifest() -> [[String: Any]]? {
+        guard let manifestURL = Bundle.main.url(forResource: "icons_manifest", withExtension: "json"),
+              let data = try? Data(contentsOf: manifestURL),
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let sections = json["sections"] as? [[String: Any]] else {
+            return nil
+        }
+        return sections
     }
 
     func loadAvailableIcons() {
@@ -120,12 +142,61 @@ final class IconManager {
 
             icons.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
 
-            debugInfo = "Found \(icons.count) icon(s)"
+            // Build sections from manifest
+            buildSections()
+
+            debugInfo = "Found \(icons.count) icon(s) in \(sections.count) section(s)"
             print("IconManager: \(debugInfo)")
             print("IconManager: Loaded icons: \(icons.map { $0.name })")
 
         } catch {
             debugInfo = "Error scanning bundle: \(error.localizedDescription)"
+        }
+    }
+
+    private func buildSections() {
+        sections = []
+
+        // Create a lookup dictionary for icons by name
+        let iconsByName = Dictionary(uniqueKeysWithValues: icons.map { ($0.name, $0) })
+
+        if let manifestSections = loadManifest() {
+            // Build sections from manifest
+            for sectionData in manifestSections {
+                guard let name = sectionData["name"] as? String,
+                      let iconNames = sectionData["icons"] as? [String] else {
+                    continue
+                }
+
+                let sectionIcons = iconNames.compactMap { iconsByName[$0] }
+                if !sectionIcons.isEmpty {
+                    sections.append(IconSection(
+                        id: name,
+                        name: name,
+                        icons: sectionIcons
+                    ))
+                }
+            }
+
+            // Add any icons not in manifest to "Other" section
+            let manifestedIconNames = Set(manifestSections.flatMap { ($0["icons"] as? [String]) ?? [] })
+            let unmanifestedIcons = icons.filter { !manifestedIconNames.contains($0.name) }
+            if !unmanifestedIcons.isEmpty {
+                sections.append(IconSection(
+                    id: "Other",
+                    name: "Other",
+                    icons: unmanifestedIcons
+                ))
+            }
+        } else {
+            // No manifest - put all icons in a single section
+            if !icons.isEmpty {
+                sections.append(IconSection(
+                    id: "All Icons",
+                    name: "All Icons",
+                    icons: icons
+                ))
+            }
         }
     }
 
@@ -140,6 +211,41 @@ final class IconManager {
 
         // Primary icon requires nil, alternate icons use their name
         let iconNameToSet: String? = (icon.name == primaryIconName) ? nil : icon.name
+
+        // Debug logging before setting icon
+        print(String(repeating: "=", count: 60))
+        print("🔄 ICON CHANGE DEBUG INFO")
+        print(String(repeating: "=", count: 60))
+        print("Icon item name (from UI): \(icon.name)")
+        print("Icon item ID: \(icon.id)")
+        print("Name to pass to setAlternateIconName: \(iconNameToSet ?? "nil (primary icon)")")
+        print("Primary icon name: \(primaryIconName)")
+        print("Current alternate icon: \(UIApplication.shared.alternateIconName ?? "nil")")
+
+        // List all preview URLs for this icon
+        print("\nPreview URLs for this icon:")
+        for (style, url) in icon.previewURLs {
+            print("  - \(style.rawValue): \(url.lastPathComponent)")
+        }
+
+        // List all .icon bundles in the app bundle
+        let iconBundles = Bundle.main.paths(forResourcesOfType: "icon", inDirectory: nil)
+        print("\nAll .icon bundles in app bundle (\(iconBundles.count) found):")
+        for path in iconBundles.sorted() {
+            let filename = (path as NSString).lastPathComponent
+            print("  - \(filename)")
+        }
+
+        // Check if this specific icon exists in bundle
+        if let iconNameToSet = iconNameToSet {
+            let iconPath = Bundle.main.path(forResource: iconNameToSet, ofType: "icon")
+            print("\nBundle.main.path(forResource: \"\(iconNameToSet)\", ofType: \"icon\"):")
+            print("  -> \(iconPath ?? "NOT FOUND")")
+        }
+
+        // Also check supportsAlternateIcons
+        print("\nUIApplication.shared.supportsAlternateIcons: \(UIApplication.shared.supportsAlternateIcons)")
+        print(String(repeating: "=", count: 60))
 
         // Use the completion handler version for better compatibility
         UIApplication.shared.setAlternateIconName(iconNameToSet) { [weak self] error in
@@ -165,5 +271,28 @@ final class IconManager {
             return currentIconName == nil
         }
         return icon.name == currentIconName
+    }
+
+    func filteredSections(searchText: String) -> [IconSection] {
+        guard !searchText.isEmpty else { return sections }
+
+        let lowercasedSearch = searchText.lowercased()
+
+        return sections.compactMap { section in
+            // If section name matches, include all icons in that section
+            if section.name.lowercased().contains(lowercasedSearch) {
+                return section
+            }
+
+            // Otherwise, filter icons by name
+            let matchingIcons = section.icons.filter { icon in
+                icon.name.lowercased().contains(lowercasedSearch)
+            }
+
+            // Only include section if it has matching icons
+            guard !matchingIcons.isEmpty else { return nil }
+
+            return IconSection(id: section.id, name: section.name, icons: matchingIcons)
+        }
     }
 }

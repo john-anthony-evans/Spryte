@@ -7,21 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52D2EFDE2EEDD3DA003D4E85 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */; };
-		52D2EFE02EEDD3E4003D4E85 /* DoorDashConsumerApp.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2EFDF2EEDD3E4003D4E85 /* DoorDashConsumerApp.icon */; };
-		52D2F2632EEDF254003D4E85 /* Dasher.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2F2622EEDF254003D4E85 /* Dasher.icon */; };
-		52D2F2722EEDF497003D4E85 /* Consumer 03 No Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2F2712EEDF497003D4E85 /* Consumer 03 No Gradient.icon */; };
-		52D2F2742EEDF4A8003D4E85 /* Dasher 03 No Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 52D2F2732EEDF4A8003D4E85 /* Dasher 03 No Gradient.icon */; };
+		5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = 413787CFC86842208C1B2F8B /* Spryte.icon */; };
+		FC604D6BB542494E868F2D46 /* Manager-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */; };
+		696A9BD243424F00826A1E61 /* Manager-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */; };
+		DBB67A7B40274739B030CB72 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */; };
+		C09408C37FB240E9B5A83050 /* Manager-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */; };
+		D84768A33164469182F9ED47 /* Manager-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */; };
+		BCE742C4D9AB4DFCB19D7686 /* Manager-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */; };
+		9C30C69A9FC2401985520017 /* DoorDash-Consumer-App.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */; };
+		0CF760AC450A4A4F992E7575 /* Dasher.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0EA467C8479E4BD2AC1C505C /* Dasher.icon */; };
+		D938A74826C34E66B6DBCA83 /* Dasher-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */; };
+		410491B461414F2394EDDDBB /* Dasher-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */; };
+		2A5B6C67E54C43B8A2510D9A /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */; };
+		C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */; };
+		4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */; };
+		6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */; };
+		C2212BE683044CBAB8FBDF3C /* Consumer-03-No-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */; };
+		75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */; };
+		7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */; };
+		5216534C2EEF428100542631 /* Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5216534B2EEF428100542631 /* Default.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		413787CFC86842208C1B2F8B /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Spryte.icon"; sourceTree = "<group>"; };
+		6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
+		C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
+		F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
+		2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "DoorDash-Consumer-App.icon"; sourceTree = "<group>"; };
+		0EA467C8479E4BD2AC1C505C /* Dasher.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher.icon"; sourceTree = "<group>"; };
+		C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
+		27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
+		CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
+		2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient.icon"; sourceTree = "<group>"; };
+		F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-02-Soft-Gradient.icon"; sourceTree = "<group>"; };
+		658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-01-Default-Gradient.icon"; sourceTree = "<group>"; };
+		5216534B2EEF428100542631 /* Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Default.icon; sourceTree = "<group>"; };
 		52D2EF5C2EEDC1D5003D4E85 /* Spryte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spryte.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Spryte.icon; sourceTree = "<group>"; };
-		52D2EFDF2EEDD3E4003D4E85 /* DoorDashConsumerApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DoorDashConsumerApp.icon; sourceTree = "<group>"; };
 		52D2EFE12EEDE000003D4E85 /* Instructions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Instructions.md; sourceTree = "<group>"; };
-		52D2F2622EEDF254003D4E85 /* Dasher.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Dasher.icon; sourceTree = "<group>"; };
-		52D2F2712EEDF497003D4E85 /* Consumer 03 No Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer 03 No Gradient.icon"; sourceTree = "<group>"; };
-		52D2F2732EEDF4A8003D4E85 /* Dasher 03 No Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher 03 No Gradient.icon"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -46,12 +74,26 @@
 		52D2EF532EEDC1D5003D4E85 = {
 			isa = PBXGroup;
 			children = (
+				413787CFC86842208C1B2F8B /* Spryte.icon */,
+				6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */,
+				F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */,
+				C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */,
+				2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */,
+				F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */,
+				11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */,
+				2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */,
+				0EA467C8479E4BD2AC1C505C /* Dasher.icon */,
+				C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */,
+				397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */,
+				27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */,
+				0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */,
+				CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */,
+				6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */,
+				2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */,
+				F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */,
+				658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */,
+				5216534B2EEF428100542631 /* Default.icon */,
 				52D2EFE12EEDE000003D4E85 /* Instructions.md */,
-				52D2EFDF2EEDD3E4003D4E85 /* DoorDashConsumerApp.icon */,
-				52D2EFDD2EEDD3DA003D4E85 /* Spryte.icon */,
-				52D2F2622EEDF254003D4E85 /* Dasher.icon */,
-				52D2F2712EEDF497003D4E85 /* Consumer 03 No Gradient.icon */,
-				52D2F2732EEDF4A8003D4E85 /* Dasher 03 No Gradient.icon */,
 				52D2EF5E2EEDC1D5003D4E85 /* Spryte */,
 				52D2EF5D2EEDC1D5003D4E85 /* Products */,
 			);
@@ -72,6 +114,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D2EF672EEDC1D8003D4E85 /* Build configuration list for PBXNativeTarget "Spryte" */;
 			buildPhases = (
+				52D2F2802EEE0000003D4E85 /* Import Icons */,
 				52D2EF582EEDC1D5003D4E85 /* Sources */,
 				52D2EF592EEDC1D5003D4E85 /* Frameworks */,
 				52D2EF5A2EEDC1D5003D4E85 /* Resources */,
@@ -129,15 +172,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D2F2742EEDF4A8003D4E85 /* Dasher 03 No Gradient.icon in Resources */,
-				52D2F2632EEDF254003D4E85 /* Dasher.icon in Resources */,
-				52D2F2722EEDF497003D4E85 /* Consumer 03 No Gradient.icon in Resources */,
-				52D2EFDE2EEDD3DA003D4E85 /* Spryte.icon in Resources */,
-				52D2EFE02EEDD3E4003D4E85 /* DoorDashConsumerApp.icon in Resources */,
+				5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */,
+				FC604D6BB542494E868F2D46 /* Manager-03-No-Gradient-Inverted.icon in Resources */,
+				696A9BD243424F00826A1E61 /* Manager-03-No-Gradient-Default.icon in Resources */,
+				DBB67A7B40274739B030CB72 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */,
+				C09408C37FB240E9B5A83050 /* Manager-02-Soft-Gradient-Default.icon in Resources */,
+				D84768A33164469182F9ED47 /* Manager-01-Default-Gradient-Inverted.icon in Resources */,
+				BCE742C4D9AB4DFCB19D7686 /* Manager-01-Default-Gradient-Default.icon in Resources */,
+				9C30C69A9FC2401985520017 /* DoorDash-Consumer-App.icon in Resources */,
+				0CF760AC450A4A4F992E7575 /* Dasher.icon in Resources */,
+				D938A74826C34E66B6DBCA83 /* Dasher-03-No-Gradient-Inverted.icon in Resources */,
+				410491B461414F2394EDDDBB /* Dasher-03-No-Gradient-Default.icon in Resources */,
+				2A5B6C67E54C43B8A2510D9A /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */,
+				C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */,
+				4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */,
+				6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */,
+				C2212BE683044CBAB8FBDF3C /* Consumer-03-No-Gradient.icon in Resources */,
+				75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */,
+				7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */,
+				5216534C2EEF428100542631 /* Default.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52D2F2802EEE0000003D4E85 /* Import Icons */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Icons to Import",
+			);
+			name = "Import Icons";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Spryte/Icon Source",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "\"${SRCROOT}/Scripts/import_icons.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52D2EF582EEDC1D5003D4E85 /* Sources */ = {
@@ -188,7 +268,7 @@
 				DEVELOPMENT_TEAM = K2XB837E84;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -250,7 +330,7 @@
 				DEVELOPMENT_TEAM = K2XB837E84;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -270,7 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = DoorDashConsumerApp;
-				ASSETCATALOG_COMPILER_APPICON_NAME = Spryte;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Default;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -281,6 +361,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Spryte;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -289,8 +371,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -316,7 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = DoorDashConsumerApp;
-				ASSETCATALOG_COMPILER_APPICON_NAME = Spryte;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Default;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +409,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Spryte;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -335,8 +419,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

@@ -1,0 +1,39 @@
+{
+  "sections": [
+    {
+      "name": "John's Sketch",
+      "icons": ["Dasher","DoorDash-Consumer-App","Spryte"]
+    }
+,
+    {
+      "name": "Dasher/Inverted",
+      "icons": ["Dasher-02-Soft-Gradient-Inverted","Dasher-03-No-Gradient-Inverted","Dasher-01-Default-Gradient-Inverted"]
+    }
+,
+    {
+      "name": "Dasher/Default",
+      "icons": ["Dasher-02-Soft-Gradient-Default","Dasher-03-No-Gradient-Default","Dasher-01-Default-Gradient-Default"]
+    }
+,
+    {
+      "name": "Manager/Inverted",
+      "icons": ["Manager-01-Default-Gradient-Inverted","Manager-02-Soft-Gradient-Inverted","Manager-03-No-Gradient-Inverted"]
+    }
+,
+    {
+      "name": "Manager/Default",
+      "icons": ["Manager-01-Default-Gradient-Default","Manager-02-Soft-Gradient-Default","Manager-03-No-Gradient-Default"]
+    }
+,
+    {
+      "name": "Uncategorized",
+      "icons": ["Default"]
+    }
+,
+    {
+      "name": "Consumer",
+      "icons": ["Consumer-03-No-Gradient","Consumer-01-Default-Gradient","Consumer-02-Soft-Gradient"]
+    }
+
+  ]
+}

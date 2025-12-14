@@ -35,15 +35,16 @@ struct IconsTab: View {
     @Binding var appearanceMode: AppearanceMode
     @State private var iconManager = IconManager()
     @AppStorage("backgroundColor") private var backgroundColor: Color = .white
+    @State private var searchText = ""
 
     private let columns = [
-        GridItem(.adaptive(minimum: 100, maximum: 140), spacing: 16)
+        GridItem(.adaptive(minimum: 120, maximum: 160), spacing: 16)
     ]
 
     var body: some View {
         NavigationStack {
             Group {
-                if iconManager.icons.isEmpty {
+                if iconManager.sections.isEmpty {
                     VStack(spacing: 16) {
                         ContentUnavailableView(
                             "No Icons Found",
@@ -64,25 +65,39 @@ struct IconsTab: View {
                     }
                 } else {
                     ScrollView {
-                        LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(iconManager.icons) { icon in
-                                IconGridItem(
-                                    icon: icon,
-                                    style: iconManager.selectedStyle,
-                                    isSelected: iconManager.isSelected(icon),
-                                    isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
-                                    backgroundColor: backgroundColor
-                                )
-                                .onTapGesture {
-                                    iconManager.setIcon(icon)
+                        LazyVStack(alignment: .leading, spacing: 24) {
+                            ForEach(iconManager.filteredSections(searchText: searchText)) { section in
+                                VStack(alignment: .leading, spacing: 12) {
+                                    Text(section.name)
+                                        .font(.headline)
+                                        .foregroundStyle(backgroundColor.isDark ? .white : .primary)
+                                        .padding(.horizontal)
+
+                                    LazyVGrid(columns: columns, spacing: 20) {
+                                        ForEach(section.icons) { icon in
+                                            IconGridItem(
+                                                icon: icon,
+                                                style: iconManager.selectedStyle,
+                                                isSelected: iconManager.isSelected(icon),
+                                                isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
+                                                backgroundColor: backgroundColor
+                                            )
+                                            .onTapGesture {
+                                                iconManager.setIcon(icon)
+                                            }
+                                        }
+                                    }
+                                    .padding(.horizontal)
                                 }
                             }
                         }
-                        .padding()
+                        .padding(.vertical)
                     }
                 }
             }
             .background(backgroundColor)
+            .navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $searchText, prompt: "Find icon...")
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Select an App Icon")
@@ -178,15 +193,15 @@ struct IconGridItem: View {
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(Color.accentColor)
                 }
-                Text(icon.name)
+                Text(icon.displayName)
                     .font(.caption2)
-                    .lineLimit(2)
+                    .lineLimit(3)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .glassEffect()
-            .frame(maxWidth: 110, minHeight: 44, alignment: .top)
+            .frame(maxWidth: 130, minHeight: 52, alignment: .top)
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .contentShape(Rectangle())

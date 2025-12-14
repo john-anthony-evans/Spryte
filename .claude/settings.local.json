@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git restore:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth status:*)",
+      "Bash(gh auth:*)",
+      "Bash(git push:*)",
+      "Bash(find:*)",
+      "Bash(\"/Applications/Xcode.app/Contents/Applications/Icon Composer.app/Contents/Executables/icontool\" --help)",
+      "Bash(mdfind:*)",
+      "Bash(\"/Applications/Xcode.app/Contents/Applications/Icon Composer.app/Contents/MacOS/Icon Composer\" --help)",
+      "Bash(xcrun --find actool:*)",
+      "Bash(xcrun actool:*)",
+      "Bash(\"/Applications/Xcode.app/Contents/Applications/Icon Composer.app/Contents/Executables/ictool\" --help)",
+      "Bash(chmod:*)",
+      "Bash(./Scripts/import_icons.sh:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(plutil:*)",
+      "Bash(xcrun:*)",
+      "Bash(xargs:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
