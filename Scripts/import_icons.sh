@@ -111,9 +111,9 @@ find "$ICONS_TO_IMPORT" -name "*.icon" -type d | while read -r ICON_PATH; do
     EXPORT_DIR="${ICON_SOURCE}/${ICON_NAME_SAFE}-Exports"
     mkdir -p "$EXPORT_DIR"
 
-    # Export each rendition
+    # Export each rendition at 2x resolution for better quality
     for RENDITION in "${RENDITIONS[@]}"; do
-        OUTPUT_FILE="${EXPORT_DIR}/${ICON_NAME_SAFE}-iOS-${RENDITION}-1024x1024@1x.png"
+        OUTPUT_FILE="${EXPORT_DIR}/${ICON_NAME_SAFE}-iOS-${RENDITION}-2048x2048@1x.png"
 
         log_info "  Exporting $RENDITION..."
 
@@ -122,8 +122,8 @@ find "$ICONS_TO_IMPORT" -name "*.icon" -type d | while read -r ICON_PATH; do
             --output-file "$OUTPUT_FILE" \
             --platform iOS \
             --rendition "$RENDITION" \
-            --width 1024 \
-            --height 1024 \
+            --width 2048 \
+            --height 2048 \
             --scale 1 2>/dev/null; then
             log_warn "  Failed to export $RENDITION for $ICON_NAME_SAFE"
         fi

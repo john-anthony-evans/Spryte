@@ -101,17 +101,17 @@ final class IconManager {
                 options: [.skipsHiddenFiles]
             )
 
-            // Scan bundle root for PNG files matching pattern: {Name}-iOS-{Style}-1024x1024@1x.png
+            // Scan bundle root for PNG files matching pattern: {Name}-iOS-{Style}-2048x2048@1x.png
             for fileURL in contents {
                 let fileName = fileURL.lastPathComponent
 
-                guard fileName.hasSuffix("-1024x1024@1x.png"),
+                guard fileName.hasSuffix("-2048x2048@1x.png"),
                       fileName.contains("-iOS-") else {
                     continue
                 }
 
-                // Parse the filename: {Name}-iOS-{Style}-1024x1024@1x.png
-                let withoutSuffix = fileName.replacingOccurrences(of: "-1024x1024@1x.png", with: "")
+                // Parse the filename: {Name}-iOS-{Style}-2048x2048@1x.png
+                let withoutSuffix = fileName.replacingOccurrences(of: "-2048x2048@1x.png", with: "")
                 let parts = withoutSuffix.components(separatedBy: "-iOS-")
 
                 guard parts.count == 2 else { continue }

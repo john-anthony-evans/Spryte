@@ -65,10 +65,10 @@ ICTOOL="/Applications/Xcode.app/Contents/Applications/Icon Composer.app/Contents
 for STYLE in Default Dark ClearLight ClearDark TintedLight TintedDark; do
     "$ICTOOL" YourIcon.icon \
         --export-image \
-        --output-file "YourIcon-iOS-${STYLE}-1024x1024@1x.png" \
+        --output-file "YourIcon-iOS-${STYLE}-2048x2048@1x.png" \
         --platform iOS \
         --rendition "$STYLE" \
-        --width 1024 --height 1024 --scale 1
+        --width 2048 --height 2048 --scale 1
 done
 ```
 
@@ -83,7 +83,7 @@ done
 
 - **Build Phase**: `Scripts/import_icons.sh` runs before each build
 - **Change Detection**: Only regenerates when icons change (hash-based)
-- **Preview Discovery**: `IconManager.swift` scans for PNGs matching `{Name}-iOS-{Style}-1024x1024@1x.png`
+- **Preview Discovery**: `IconManager.swift` scans for PNGs matching `{Name}-iOS-{Style}-2048x2048@1x.png`
 - **Section Support**: Reads `icons_manifest.json` to group icons
 - **Icon Switching**: Uses `UIApplication.shared.setAlternateIconName()` at runtime
 
@@ -150,7 +150,7 @@ This is an iOS system state issue. Follow the **Nuclear Reset** steps above.
 ### Icons not showing in picker
 
 Ensure preview PNGs exist with the correct naming pattern:
-`{IconName}-iOS-{Style}-1024x1024@1x.png`
+`{IconName}-iOS-{Style}-2048x2048@1x.png`
 
 ### Import script not running
 

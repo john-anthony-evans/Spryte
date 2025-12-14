@@ -43,11 +43,16 @@ struct ContentView: View {
     @State private var selectedTab = 0
     @State private var splashUIHidden = false
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
+    @AppStorage("backgroundColor") private var backgroundColor: Color = .white
 
     private var effectiveColorScheme: ColorScheme? {
         // Force dark mode on Splash Screen tab
         if selectedTab == 1 {
             return .dark
+        }
+        // Auto light/dark based on background color luminance
+        if selectedTab == 0 {
+            return backgroundColor.isDark ? .dark : .light
         }
         return appearanceMode.colorScheme
     }
