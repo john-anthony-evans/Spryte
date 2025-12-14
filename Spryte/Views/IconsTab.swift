@@ -101,6 +101,8 @@ struct IconsTab: View {
                                 .padding(.horizontal)
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(backgroundColor)
                 } else {
                     GeometryReader { geometry in
                         ScrollView {
@@ -133,6 +135,7 @@ struct IconsTab: View {
                             }
                             .padding(.vertical)
                         }
+                        .background(backgroundColor)
                         .onAppear {
                             contentWidth = geometry.size.width
                             // Set default scale for 3 columns if not yet set
@@ -146,7 +149,6 @@ struct IconsTab: View {
                     }
                 }
             }
-            .background(backgroundColor)
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Find icon...")
             .toolbar {
@@ -268,7 +270,7 @@ struct IconGridItem: View {
                         .frame(width: iconSize, height: iconSize)
                 } else {
                     // Fallback placeholder
-                    RoundedRectangle(cornerRadius: 0, style: .continuous)
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(.quaternary)
                         .frame(width: iconSize, height: iconSize)
                         .overlay {
@@ -279,7 +281,8 @@ struct IconGridItem: View {
 
                 // Loading indicator
                 if isLoading {
-                    Color.black.opacity(0.3)
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(Color.black.opacity(0.3))
                         .frame(width: iconSize, height: iconSize)
                     ProgressView()
                         .tint(.white)
