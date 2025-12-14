@@ -19,8 +19,8 @@ enum IconStyle: String, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .default: return "Default"
-        case .dark: return "Dark"
+        case .default: return "Light Mode"
+        case .dark: return "Dark Mode"
         case .clearLight: return "Clear Light"
         case .clearDark: return "Clear Dark"
         case .tintedLight: return "Tinted Light"

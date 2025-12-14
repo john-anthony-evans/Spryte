@@ -35,11 +35,49 @@ struct IconsTab: View {
     @Binding var appearanceMode: AppearanceMode
     @State private var iconManager = IconManager()
     @AppStorage("backgroundColor") private var backgroundColor: Color = .white
-    @State private var searchText = ""
+    @AppStorage("iconScale") private var iconScale: Double = -1 // -1 means use default
 
-    private let columns = [
-        GridItem(.adaptive(minimum: 120, maximum: 160), spacing: 16)
-    ]
+    @State private var searchText = ""
+    @State private var showScalePopover = false
+    @State private var contentWidth: CGFloat = 0
+
+    // Grid layout constants
+    private let baseColumnSize: CGFloat = 80
+    private let columnSpacing: CGFloat = 12
+    private let horizontalPadding: CGFloat = 32 // 16 on each side
+
+    private var effectiveScale: Double {
+        iconScale < 0 ? scaleForColumns(3) : iconScale
+    }
+
+    private var columns: [GridItem] {
+        let scaledMin = baseColumnSize * effectiveScale
+        let scaledMax = scaledMin + 20
+        return [GridItem(.adaptive(minimum: scaledMin, maximum: scaledMax), spacing: columnSpacing)]
+    }
+
+    /// Calculate the scale value needed for N icons per row
+    private func scaleForColumns(_ n: Int) -> Double {
+        guard contentWidth > 0, n > 0 else { return 1.0 }
+        let availableWidth = contentWidth - horizontalPadding
+        // availableWidth = n * (baseColumnSize * scale) + (n - 1) * spacing
+        // scale = (availableWidth - (n - 1) * spacing) / (n * baseColumnSize)
+        let scale = (availableWidth - CGFloat(n - 1) * columnSpacing) / (CGFloat(n) * baseColumnSize)
+        return max(0.5, Double(scale))
+    }
+
+    /// Detent scale values for haptic feedback
+    private var scaleDetents: [Double] {
+        [
+            scaleForColumns(3),  // 3 per row (default)
+            scaleForColumns(2),  // 2 per row
+            scaleForColumns(1)   // 1 per row
+        ]
+    }
+
+    private func isNearDetent(_ value: Double) -> Bool {
+        scaleDetents.contains { abs($0 - value) < 0.03 }
+    }
 
     var body: some View {
         NavigationStack {
@@ -64,34 +102,47 @@ struct IconsTab: View {
                         }
                     }
                 } else {
-                    ScrollView {
-                        LazyVStack(alignment: .leading, spacing: 24) {
-                            ForEach(iconManager.filteredSections(searchText: searchText)) { section in
-                                VStack(alignment: .leading, spacing: 12) {
-                                    Text(section.name)
-                                        .font(.headline)
-                                        .foregroundStyle(backgroundColor.isDark ? .white : .primary)
-                                        .padding(.horizontal)
+                    GeometryReader { geometry in
+                        ScrollView {
+                            LazyVStack(alignment: .leading, spacing: 24) {
+                                ForEach(iconManager.filteredSections(searchText: searchText)) { section in
+                                    VStack(alignment: .leading, spacing: 12) {
+                                        Text(section.name)
+                                            .font(.title2).fontWeight(.bold)
+                                            .foregroundStyle(backgroundColor.isDark ? .white : .primary)
+                                            .padding(.horizontal)
 
-                                    LazyVGrid(columns: columns, spacing: 20) {
-                                        ForEach(section.icons) { icon in
-                                            IconGridItem(
-                                                icon: icon,
-                                                style: iconManager.selectedStyle,
-                                                isSelected: iconManager.isSelected(icon),
-                                                isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
-                                                backgroundColor: backgroundColor
-                                            )
-                                            .onTapGesture {
-                                                iconManager.setIcon(icon)
+                                        LazyVGrid(columns: columns, spacing: 20) {
+                                            ForEach(section.icons) { icon in
+                                                IconGridItem(
+                                                    icon: icon,
+                                                    style: iconManager.selectedStyle,
+                                                    isSelected: iconManager.isSelected(icon),
+                                                    isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
+                                                    backgroundColor: backgroundColor,
+                                                    iconScale: effectiveScale
+                                                )
+                                                .onTapGesture {
+                                                    iconManager.setIcon(icon)
+                                                }
                                             }
                                         }
+                                        .padding(.horizontal)
                                     }
-                                    .padding(.horizontal)
                                 }
                             }
+                            .padding(.vertical)
                         }
-                        .padding(.vertical)
+                        .onAppear {
+                            contentWidth = geometry.size.width
+                            // Set default scale for 3 columns if not yet set
+                            if iconScale < 0 {
+                                iconScale = scaleForColumns(3)
+                            }
+                        }
+                        .onChange(of: geometry.size.width) { _, newWidth in
+                            contentWidth = newWidth
+                        }
                     }
                 }
             }
@@ -99,12 +150,57 @@ struct IconsTab: View {
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Find icon...")
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Select an App Icon")
-                        .font(.headline)
-                        .padding(8)
-                        .glassEffect()
+                if iconManager.selectedStyle != .default || !isNearDetent(effectiveScale) || backgroundColor.rawValue != Color.white.rawValue {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            // Reset to defaults
+                            iconScale = scaleForColumns(3)
+                            backgroundColor = .white
+                            iconManager.selectedStyle = .default
+                            searchText = ""
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward.circle")
+                        }
+                    }
                 }
+                ToolbarSpacer(.fixed, placement: .topBarTrailing)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showScalePopover.toggle()
+                    } label: {
+//                        Image(systemName: "circle.dotted.circle")
+                        Image(systemName: "arrow.down.backward.and.arrow.up.forward.circle")
+                        
+                    }
+                    .popover(isPresented: $showScalePopover) {
+                        VStack(spacing: 12) {
+                            Text("Icon Size")
+                                .font(.headline)
+                            Slider(value: $iconScale, in: 0.5...5.0, step: 0.05)
+                                .frame(width: 250)
+                                .onChange(of: iconScale) { _, newValue in
+                                    if isNearDetent(newValue) {
+                                        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+                                    } else {
+                                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                    }
+                                }
+                            Text("\(Int(effectiveScale * 100))%")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 16)
+                        .presentationCompactAdaptation(.popover)
+                        .onAppear {
+                            // Initialize slider to calculated default if not yet set
+                            if iconScale < 0 {
+                                iconScale = scaleForColumns(3)
+                            }
+                        }
+                    }
+                }
+                ToolbarSpacer(.fixed, placement: .topBarTrailing)
                 ToolbarItem(placement: .topBarTrailing) {
                     ColorPicker("Background", selection: $backgroundColor, supportsOpacity: false)
                         .labelsHidden()
@@ -154,6 +250,11 @@ struct IconGridItem: View {
     let isSelected: Bool
     let isLoading: Bool
     let backgroundColor: Color
+    let iconScale: Double
+
+    private var iconSize: CGFloat {
+        60 * iconScale
+    }
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
@@ -164,12 +265,12 @@ struct IconGridItem: View {
                     Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
-                        .frame(width: 72, height: 72)
+                        .frame(width: iconSize, height: iconSize)
                 } else {
                     // Fallback placeholder
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    RoundedRectangle(cornerRadius: 0, style: .continuous)
                         .fill(.quaternary)
-                        .frame(width: 72, height: 72)
+                        .frame(width: iconSize, height: iconSize)
                         .overlay {
                             Image(systemName: "questionmark")
                                 .foregroundStyle(.secondary)
@@ -179,22 +280,22 @@ struct IconGridItem: View {
                 // Loading indicator
                 if isLoading {
                     Color.black.opacity(0.3)
-                        .frame(width: 72, height: 72)
+                        .frame(width: iconSize, height: iconSize)
                     ProgressView()
                         .tint(.white)
                 }
             }
-            .frame(width: 72, height: 72)
+            .frame(width: iconSize, height: iconSize)
 
             // Name with checkmark if selected
             HStack(spacing: 4) {
                 if isSelected {
                     Image(systemName: "checkmark.circle.fill")
-                        .font(.caption2.weight(.semibold))
+                        .font(.caption2)
                         .foregroundStyle(Color.accentColor)
                 }
                 Text(icon.displayName)
-                    .font(.caption2)
+                    .font(.caption).fontWeight(.semibold)
                     .lineLimit(3)
                     .multilineTextAlignment(.center)
             }
