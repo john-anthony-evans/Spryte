@@ -42,7 +42,7 @@ enum AppearanceMode: String, CaseIterable, Identifiable {
 struct ContentView: View {
     @State private var selectedTab = 0
     @State private var splashUIHidden = false
-    @State private var showOnboarding = true // TODO: Change to @AppStorage("hasSeenOnboarding") for first-launch only
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("appearanceMode") private var appearanceMode: AppearanceMode = .system
     @AppStorage("backgroundColor") private var backgroundColor: Color = .white
 
@@ -71,8 +71,14 @@ struct ContentView: View {
         .toolbar(splashUIHidden ? .hidden : .visible, for: .tabBar)
         .animation(.easeInOut(duration: 0.25), value: splashUIHidden)
         .preferredColorScheme(effectiveColorScheme)
-        .fullScreenCover(isPresented: $showOnboarding) {
-            OnboardingView(isPresented: $showOnboarding)
+        .fullScreenCover(isPresented: Binding(
+            get: { !hasSeenOnboarding },
+            set: { if !$0 { hasSeenOnboarding = true } }
+        )) {
+            OnboardingView(isPresented: Binding(
+                get: { !hasSeenOnboarding },
+                set: { if !$0 { hasSeenOnboarding = true } }
+            ))
         }
     }
 }
