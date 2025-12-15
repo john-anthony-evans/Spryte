@@ -86,6 +86,7 @@ done
 - **Preview Discovery**: `IconManager.swift` scans for PNGs matching `{Name}-iOS-{Style}-2048x2048@1x.png`
 - **Section Support**: Reads `icons_manifest.json` to group icons
 - **Icon Switching**: Uses `UIApplication.shared.setAlternateIconName()` at runtime
+- **Icon Shape**: iOS 26 icons use a squircle (continuous corner curve) with corner radius ≈ 44% of icon width
 
 ## Build Settings Reference
 

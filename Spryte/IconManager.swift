@@ -60,6 +60,7 @@ final class IconManager {
     var currentIconName: String?
     var selectedStyle: IconStyle = .default
     var isChangingIcon = false
+    var changingToIconName: String?
     var errorMessage: String?
     var debugInfo: String = ""
 
@@ -207,6 +208,7 @@ final class IconManager {
         if isSelected(icon) { return }
 
         isChangingIcon = true
+        changingToIconName = icon.name
         errorMessage = nil
 
         // Primary icon requires nil, alternate icons use their name
@@ -261,6 +263,7 @@ final class IconManager {
                 }
 
                 self.isChangingIcon = false
+                self.changingToIconName = nil
             }
         }
     }
@@ -271,6 +274,10 @@ final class IconManager {
             return currentIconName == nil
         }
         return icon.name == currentIconName
+    }
+
+    func isChangingTo(_ icon: IconItem) -> Bool {
+        return isChangingIcon && icon.name == changingToIconName
     }
 
     func filteredSections(searchText: String) -> [IconSection] {

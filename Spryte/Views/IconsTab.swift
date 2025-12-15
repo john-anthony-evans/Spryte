@@ -120,7 +120,7 @@ struct IconsTab: View {
                                                     icon: icon,
                                                     style: iconManager.selectedStyle,
                                                     isSelected: iconManager.isSelected(icon),
-                                                    isLoading: iconManager.isChangingIcon && iconManager.isSelected(icon),
+                                                    isLoading: iconManager.isChangingTo(icon),
                                                     backgroundColor: backgroundColor,
                                                     iconScale: effectiveScale
                                                 )
@@ -258,6 +258,11 @@ struct IconGridItem: View {
         60 * iconScale
     }
 
+    /// iOS app icon corner radius ~22% of icon size with continuous corners
+    private var iconCornerRadius: CGFloat {
+        iconSize * 0.22
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             ZStack {
@@ -270,7 +275,7 @@ struct IconGridItem: View {
                         .frame(width: iconSize, height: iconSize)
                 } else {
                     // Fallback placeholder
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    RoundedRectangle(cornerRadius: `iconCornerRadius`, style: .continuous)
                         .fill(.quaternary)
                         .frame(width: iconSize, height: iconSize)
                         .overlay {
@@ -281,7 +286,7 @@ struct IconGridItem: View {
 
                 // Loading indicator
                 if isLoading {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    RoundedRectangle(cornerRadius: iconCornerRadius, style: .continuous)
                         .fill(Color.black.opacity(0.3))
                         .frame(width: iconSize, height: iconSize)
                     ProgressView()
