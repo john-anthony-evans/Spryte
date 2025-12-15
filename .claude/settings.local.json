@@ -18,7 +18,8 @@
       "Bash(xcodebuild:*)",
       "Bash(plutil:*)",
       "Bash(xcrun:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
