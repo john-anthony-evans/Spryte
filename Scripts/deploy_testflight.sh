@@ -34,9 +34,10 @@ APP_ID="6756588381"
 BUNDLE_ID="com.doordash.spryte"
 TEAM_ID="K2XB837E84"
 
-# API credentials (can be overridden by env vars or arguments)
-API_KEY_ID="${ASC_API_KEY_ID:-TA8277P6W3}"
-API_ISSUER_ID="${ASC_API_ISSUER_ID:-69a6de7e-e168-47e3-e053-5b8c7c11a4d1}"
+# API credentials (from environment variables or arguments)
+# Set these in ~/.zshrc or pass via --key-id and --issuer-id
+API_KEY_ID="${ASC_API_KEY_ID:-}"
+API_ISSUER_ID="${ASC_API_ISSUER_ID:-}"
 
 # Output directories
 BUILD_DIR="${PROJECT_ROOT}/build"
@@ -108,6 +109,18 @@ done
 # Validate prerequisites
 # ===========================================
 if [[ "$DRY_RUN" == false ]]; then
+    if [[ -z "$API_KEY_ID" || -z "$API_ISSUER_ID" ]]; then
+        log_error "API credentials required for upload"
+        log_error ""
+        log_error "Set environment variables in ~/.zshrc:"
+        log_error "  export ASC_API_KEY_ID=\"your_key_id\""
+        log_error "  export ASC_API_ISSUER_ID=\"your_issuer_id\""
+        log_error ""
+        log_error "Or pass as arguments:"
+        log_error "  $0 --key-id KEY_ID --issuer-id ISSUER_ID"
+        exit 1
+    fi
+
     API_KEY_FILE="$HOME/.appstoreconnect/private_keys/AuthKey_${API_KEY_ID}.p8"
     if [[ ! -f "$API_KEY_FILE" ]]; then
         log_error "API key file not found: $API_KEY_FILE"

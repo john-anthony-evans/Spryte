@@ -21,7 +21,6 @@ Or via Claude Code:
 | Bundle ID | com.doordash.spryte |
 | App Store Connect ID | 6756588381 |
 | Team ID | K2XB837E84 |
-| API Key ID | TA8277P6W3 |
 
 **Links:**
 - [App Store Connect](https://appstoreconnect.apple.com/apps/6756588381/testflight)
@@ -33,17 +32,24 @@ These steps have already been completed for this project:
 
 ### 1. App Store Connect API Key
 
-The API key is stored at:
+The API key should be stored at:
 ```
-~/.appstoreconnect/private_keys/AuthKey_TA8277P6W3.p8
+~/.appstoreconnect/private_keys/AuthKey_<KEY_ID>.p8
 ```
 
-To create a new key (if needed):
+And environment variables set in `~/.zshrc`:
+```bash
+export ASC_API_KEY_ID="<your_key_id>"
+export ASC_API_ISSUER_ID="<your_issuer_id>"
+```
+
+To create a new key:
 1. Go to [App Store Connect API Keys](https://appstoreconnect.apple.com/access/integrations/api)
 2. Click **+** to generate a new key
 3. Select **Admin** or **App Manager** role
 4. Download the `.p8` file immediately (only available once)
 5. Move to `~/.appstoreconnect/private_keys/`
+6. Note the Key ID and Issuer ID and add to `~/.zshrc`
 
 ### 2. App Registration
 
@@ -106,7 +112,7 @@ The app isn't registered in App Store Connect. This should already be done, but 
 # Check if key exists
 ls ~/.appstoreconnect/private_keys/
 
-# Should show: AuthKey_TA8277P6W3.p8
+# Should show: AuthKey_<YOUR_KEY_ID>.p8
 ```
 
 ### Build not appearing in TestFlight
