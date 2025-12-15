@@ -73,6 +73,7 @@ The "DoorDash Design" internal tester group is set up. Internal testers automati
 - Build takes **5-15 minutes** to process in App Store Connect
 - Internal testers (DoorDash Design group) automatically get access
 - No beta review required for internal testing
+- Export compliance is pre-configured (`ITSAppUsesNonExemptEncryption = NO`)
 
 ### Script Options
 
