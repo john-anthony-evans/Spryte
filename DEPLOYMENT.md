@@ -1,137 +1,141 @@
 # Spryte TestFlight Deployment Guide
 
-This guide explains how to deploy Spryte to TestFlight using the automated deployment script.
+## Quick Deploy
 
-## Prerequisites
-
-### 1. App Store Connect API Key
-
-You need an App Store Connect API key to upload builds:
-
-1. Go to [App Store Connect](https://appstoreconnect.apple.com/)
-2. Click **Users and Access** in the top menu
-3. Select the **Integrations** tab
-4. Click **App Store Connect API**
-5. Click the **+** button to create a new key
-6. Give it a name (e.g., "Spryte Deployment")
-7. Select **Admin** or **App Manager** role
-8. Click **Generate**
-9. **Download the key immediately** - you can only download it once!
-10. Note the **Key ID** (shown in the table)
-11. Note the **Issuer ID** (shown at the top of the Keys section)
-
-### 2. Store the API Key
-
-Place your downloaded API key file in the correct location:
+Once set up, deploying is a single command:
 
 ```bash
-# Create the directory
-mkdir -p ~/.appstoreconnect/private_keys
-
-# Move your downloaded key (replace KEY_ID with your actual key ID)
-mv ~/Downloads/AuthKey_KEY_ID.p8 ~/.appstoreconnect/private_keys/
-
-# Secure the file
-chmod 600 ~/.appstoreconnect/private_keys/AuthKey_*.p8
-```
-
-### 3. Set Environment Variables
-
-Add these to your shell profile (`~/.zshrc` or `~/.bashrc`):
-
-```bash
-export ASC_API_KEY_ID="YOUR_KEY_ID"
-export ASC_API_ISSUER_ID="YOUR_ISSUER_ID"
-```
-
-Then reload: `source ~/.zshrc`
-
-## Deployment
-
-### Using the Script
-
-From the project root:
-
-```bash
-# Deploy to TestFlight (with env vars set)
 ./Scripts/deploy_testflight.sh
-
-# Or pass credentials as arguments
-./Scripts/deploy_testflight.sh --key-id ABC123 --issuer-id 12345678-1234-1234-1234-123456789012
-
-# Dry run (build but don't upload)
-./Scripts/deploy_testflight.sh --dry-run
 ```
 
-### Using Claude Code
-
+Or via Claude Code:
 ```
 /deploy-testflight
 ```
 
-Or for a dry run:
+## App Details
 
+| Field | Value |
+|-------|-------|
+| App Name | Spryte Icon Preview |
+| Bundle ID | com.doordash.spryte |
+| App Store Connect ID | 6756588381 |
+| Team ID | K2XB837E84 |
+| API Key ID | TA8277P6W3 |
+
+**Links:**
+- [App Store Connect](https://appstoreconnect.apple.com/apps/6756588381/testflight)
+- [TestFlight (web)](https://beta.itunes.apple.com/v1/app/6756588381)
+
+## First-Time Setup (Already Done)
+
+These steps have already been completed for this project:
+
+### 1. App Store Connect API Key
+
+The API key is stored at:
 ```
-/deploy-testflight --dry-run
+~/.appstoreconnect/private_keys/AuthKey_TA8277P6W3.p8
 ```
+
+To create a new key (if needed):
+1. Go to [App Store Connect API Keys](https://appstoreconnect.apple.com/access/integrations/api)
+2. Click **+** to generate a new key
+3. Select **Admin** or **App Manager** role
+4. Download the `.p8` file immediately (only available once)
+5. Move to `~/.appstoreconnect/private_keys/`
+
+### 2. App Registration
+
+The app "Spryte Icon Preview" is registered in App Store Connect with bundle ID `com.doordash.spryte`.
+
+### 3. Internal Tester Group
+
+The "DoorDash Design" internal tester group is set up. Internal testers automatically receive all builds.
+
+## Deployment Process
 
 ### What the Script Does
 
-1. **Increments build number** - Automatically bumps `CURRENT_PROJECT_VERSION` in project.pbxproj
-2. **Archives the app** - Creates a Release archive for iOS
-3. **Exports IPA** - Uses ExportOptions.plist for App Store Connect distribution
-4. **Uploads to TestFlight** - Uses App Store Connect API for upload
+1. **Increments build number** in project.pbxproj
+2. **Archives** the app (~1 minute)
+3. **Exports IPA** for App Store distribution
+4. **Uploads** to TestFlight (~30 seconds)
+
+### After Upload
+
+- Build takes **5-15 minutes** to process in App Store Connect
+- Internal testers (DoorDash Design group) automatically get access
+- No beta review required for internal testing
+
+### Script Options
+
+```bash
+# Full deployment
+./Scripts/deploy_testflight.sh
+
+# Build only, don't upload
+./Scripts/deploy_testflight.sh --dry-run
+
+# Verbose output (show full xcodebuild logs)
+./Scripts/deploy_testflight.sh --verbose
+```
 
 ## Build Artifacts
 
-After a successful build, you'll find:
-- Archive: `build/Spryte.xcarchive`
-- IPA: `build/export/Spryte.ipa`
+After a build, artifacts are stored in:
+```
+build/
+├── Spryte.xcarchive    # Xcode archive
+└── export/
+    └── Spryte.ipa      # Uploadable IPA (~493MB)
+```
 
 ## Troubleshooting
 
+### "Cannot determine Apple ID from Bundle ID"
+
+The app isn't registered in App Store Connect. This should already be done, but if you see this error:
+1. Go to [App Store Connect Apps](https://appstoreconnect.apple.com/apps)
+2. Click **+** → **New App**
+3. Use bundle ID: `com.doordash.spryte`
+
 ### "API key file not found"
 
-Ensure your API key is in the correct location:
 ```bash
-ls -la ~/.appstoreconnect/private_keys/
+# Check if key exists
+ls ~/.appstoreconnect/private_keys/
+
+# Should show: AuthKey_TA8277P6W3.p8
 ```
 
-You should see `AuthKey_<YOUR_KEY_ID>.p8`
+### Build not appearing in TestFlight
 
-### "Authentication credentials are missing or invalid"
+1. Wait 5-15 minutes for processing
+2. Check [App Store Connect](https://appstoreconnect.apple.com/apps/6756588381/testflight) for build status
+3. Force quit and reopen TestFlight app
+4. Ensure you're signed in with the correct Apple ID
 
-1. Verify your Key ID and Issuer ID are correct
-2. Ensure the API key has the correct role (Admin or App Manager)
-3. Check that the key hasn't been revoked in App Store Connect
+### "Archive failed"
 
-### "No matching provisioning profile found"
-
-1. Open Xcode and go to **Signing & Capabilities**
-2. Ensure **Automatically manage signing** is checked
-3. Select your team (K2XB837E84)
-4. Let Xcode create/download the provisioning profile
-
-### Build number conflicts
-
-If TestFlight rejects a build due to a duplicate build number:
-1. Check current build in App Store Connect
-2. Manually update `CURRENT_PROJECT_VERSION` in project.pbxproj to a higher number
-3. Re-run the deployment script
+Run with verbose mode to see errors:
+```bash
+./Scripts/deploy_testflight.sh --verbose --dry-run
+```
 
 ## Version Management
 
-- **Marketing Version**: Set in Xcode project settings (`MARKETING_VERSION`)
-- **Build Number**: Auto-incremented by the script (`CURRENT_PROJECT_VERSION`)
+- **Marketing Version** (1.0, 1.1, etc.): Update manually in Xcode or project.pbxproj
+- **Build Number** (1, 2, 3, etc.): Auto-incremented by the script
 
-To bump the marketing version for a new release:
+To bump marketing version:
 ```bash
-# In project.pbxproj, find and update:
-MARKETING_VERSION = 1.1;  # Change from 1.0 to 1.1
+# Find and update MARKETING_VERSION in project.pbxproj
+sed -i '' 's/MARKETING_VERSION = 1.0;/MARKETING_VERSION = 1.1;/g' Spryte.xcodeproj/project.pbxproj
 ```
 
-## Security Notes
+## Security
 
-- Never commit API keys to version control
-- The `~/.appstoreconnect/` directory should not be in any git repository
-- API keys can be revoked at any time from App Store Connect
+- API key is stored locally at `~/.appstoreconnect/private_keys/`
+- Never commit `.p8` files to version control
+- The key can be revoked anytime from App Store Connect

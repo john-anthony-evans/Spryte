@@ -1,45 +1,46 @@
 ---
-description: Build and deploy Spryte to TestFlight
+description: Deploy Spryte to TestFlight (build, export, upload)
 ---
 
 # Deploy to TestFlight
 
-Build and upload Spryte to TestFlight for beta testing.
+Deploy the current code to TestFlight for beta testing.
+
+## What This Does
+
+1. Increments the build number automatically
+2. Archives the app for Release (~1 min)
+3. Exports IPA for App Store distribution
+4. Uploads to TestFlight (~30 sec)
+5. Shows links to App Store Connect
 
 ## Instructions
 
-1. First, check if this is a dry run by looking for `--dry-run` in the user's command
+Run the deployment script:
 
-2. Show the current version info:
-   ```bash
-   cd "/Users/john/Documents/Icon Test/Spryte" && grep -E "MARKETING_VERSION|CURRENT_PROJECT_VERSION" Spryte.xcodeproj/project.pbxproj | head -2
-   ```
+```bash
+cd "/Users/john/Documents/Icon Test/Spryte" && ./Scripts/deploy_testflight.sh
+```
 
-3. Run the deployment script:
-   - For normal deployment: `./Scripts/deploy_testflight.sh`
-   - For dry run: `./Scripts/deploy_testflight.sh --dry-run`
+For a dry run (build only, no upload):
+```bash
+cd "/Users/john/Documents/Icon Test/Spryte" && ./Scripts/deploy_testflight.sh --dry-run
+```
 
-4. The script will:
-   - Increment the build number automatically
-   - Archive the app for Release
-   - Export an IPA for App Store Connect
-   - Upload to TestFlight (unless dry run)
+## After Deployment
 
-5. Report the results to the user including:
-   - New version and build number
-   - Location of IPA file
-   - Success/failure status
+- Build takes **5-15 minutes** to process before appearing in TestFlight
+- Internal testers (DoorDash Design group) automatically get access
+- App Store Connect: https://appstoreconnect.apple.com/apps/6756588381/testflight
 
-## Prerequisites
+## Troubleshooting
 
-Before first use:
-- App Store Connect API key must exist at `~/.appstoreconnect/private_keys/AuthKey_<KEY_ID>.p8`
-- Environment variables must be set: `ASC_API_KEY_ID`, `ASC_API_ISSUER_ID`
-- See DEPLOYMENT.md for setup instructions
+If the build doesn't appear in TestFlight:
+1. Wait 5-15 minutes for processing
+2. Force quit and reopen TestFlight app
+3. Check App Store Connect for build status
 
-## Arguments
-
-Pass any arguments after the command:
-- `/deploy-testflight` - Full deployment
-- `/deploy-testflight --dry-run` - Build only, don't upload
-- `/deploy-testflight --key-id X --issuer-id Y` - Use specific credentials
+For verbose output to debug issues:
+```bash
+./Scripts/deploy_testflight.sh --verbose
+```

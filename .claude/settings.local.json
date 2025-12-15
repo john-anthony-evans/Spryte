@@ -19,7 +19,8 @@
       "Bash(plutil:*)",
       "Bash(xcrun:*)",
       "Bash(xargs:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(./Scripts/deploy_testflight.sh:*)"
     ],
     "deny": [],
     "ask": []
