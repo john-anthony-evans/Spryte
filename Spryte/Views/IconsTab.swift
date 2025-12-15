@@ -139,12 +139,16 @@ struct IconsTab: View {
                         .onAppear {
                             contentWidth = geometry.size.width
                             // Set default scale for 3 columns if not yet set
-                            if iconScale < 0 {
+                            if iconScale < 0 && contentWidth > 0 {
                                 iconScale = scaleForColumns(3)
                             }
                         }
                         .onChange(of: geometry.size.width) { _, newWidth in
                             contentWidth = newWidth
+                            // Handle case where onAppear ran before geometry was ready
+                            if iconScale < 0 && newWidth > 0 {
+                                iconScale = scaleForColumns(3)
+                            }
                         }
                     }
                 }
