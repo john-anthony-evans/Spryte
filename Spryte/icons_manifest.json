@@ -31,7 +31,12 @@
     }
 ,
     {
-      "name": "Consumer/Dec 18 2025",
+      "name": "Consumer/Dec 18",
+      "icons": ["Consumer-FF3008","Consumer-mix-and-match","Consumer-EB1700"]
+    }
+,
+    {
+      "name": "Consumer/Dec 17 2025",
       "icons": ["Consumer-03-No-Gradient-FF3008-","Consumer-01-Default-Gradient","Consumer-03-No-Gradient-EB4628","Consumer-02-Soft-Gradient"]
     }
 

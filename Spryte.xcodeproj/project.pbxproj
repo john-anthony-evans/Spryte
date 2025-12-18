@@ -7,51 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CF760AC450A4A4F992E7575 /* Dasher.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0EA467C8479E4BD2AC1C505C /* Dasher.icon */; };
-		2A5B6C67E54C43B8A2510D9A /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */; };
-		410491B461414F2394EDDDBB /* Dasher-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */; };
-		414D4DCBA7A14F42AD15C4A7 /* Consumer-03-No-Gradient-EB4628.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */; };
-		4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */; };
+		92FEB26295424EE5B04DB418 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = E688786690E04D1FB2BD630A /* Spryte.icon */; };
+		9EBA16FA288B4EE9BC847E79 /* Manager-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 97CE5E60EFC4481D9CBB2CE1 /* Manager-03-No-Gradient-Inverted.icon */; };
+		23DAB8037C254376925A453E /* Manager-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 15536C4C253C401A8C5E4CC4 /* Manager-03-No-Gradient-Default.icon */; };
+		ABB79AFA138E48C981F52966 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0757722595A54CC6B9C2E095 /* Manager-02-Soft-Gradient-Inverted.icon */; };
+		8F0370E9A6694BBE8E08CB85 /* Manager-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = EF1758AC9E094D77BD4A63BF /* Manager-02-Soft-Gradient-Default.icon */; };
+		957A273A1FEB44FEA2477645 /* Manager-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 26D8A5A623004745AF7A189B /* Manager-01-Default-Gradient-Inverted.icon */; };
+		B8C55D5B8E414321BB940A7A /* Manager-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 83E6176B21C24CAD89422084 /* Manager-01-Default-Gradient-Default.icon */; };
+		9834B0AED1724CCB888CFF80 /* DoorDash-Consumer-App.icon in Resources */ = {isa = PBXBuildFile; fileRef = 786EA1EF554E4B2F9541FDC5 /* DoorDash-Consumer-App.icon */; };
+		A29A499B0E644DD6A2FBAF33 /* Dasher.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5708331D8C2F4EFAA89F49E7 /* Dasher.icon */; };
+		6AF2E4ABE08B48E98D8B489F /* Dasher-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 535AF31009904D10AAC862BC /* Dasher-03-No-Gradient-Inverted.icon */; };
+		D0951B24221A4B03B1FC3BAA /* Dasher-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 07090EC7ACD2416499E107DE /* Dasher-03-No-Gradient-Default.icon */; };
+		534CCF1EEB044D4AB1DCF266 /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 837B6CC66FE54FA99D893ABB /* Dasher-02-Soft-Gradient-Inverted.icon */; };
+		CB74962AA4E942E186CC685E /* Dasher-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = C87EE735460D4C158AE1D97D /* Dasher-02-Soft-Gradient-Default.icon */; };
+		9C067D9129254D729114E57F /* Dasher-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = AA66578EBFA84A2E9BEA93E0 /* Dasher-01-Default-Gradient-Inverted.icon */; };
+		8C2F648BFB4140B6BF5D9651 /* Dasher-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = BE00CB36CB884CC1A654E15D /* Dasher-01-Default-Gradient-Default.icon */; };
+		EA954BADCF1A49C8A2815FC3 /* Consumer-mix-and-match.icon in Resources */ = {isa = PBXBuildFile; fileRef = BF3F3066CE7740F99835DA9F /* Consumer-mix-and-match.icon */; };
+		CF73E81994A24946A61FB5F7 /* Consumer-FF3008.icon in Resources */ = {isa = PBXBuildFile; fileRef = A170CCE8DC2E4A99A5E31C38 /* Consumer-FF3008.icon */; };
+		E5299ABF3E25445F98652209 /* Consumer-EB1700.icon in Resources */ = {isa = PBXBuildFile; fileRef = E5A89E911C344CE28A790506 /* Consumer-EB1700.icon */; };
+		DECB9E5C818249CCA4A10077 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */ = {isa = PBXBuildFile; fileRef = D4EDB7302688470D9581BBE8 /* Consumer-03-No-Gradient-FF3008-.icon */; };
+		9183DB5B7A1642B8A1219F1F /* Consumer-03-No-Gradient-EB4628.icon in Resources */ = {isa = PBXBuildFile; fileRef = 99F4F2BF8F154FD9B16A59C6 /* Consumer-03-No-Gradient-EB4628.icon */; };
+		37A6B575FD4B4A6F923F2AAB /* Consumer-02-Soft-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 7C1A8CD852C746B39CD469C5 /* Consumer-02-Soft-Gradient.icon */; };
+		204D23D4EA514576BBF22679 /* Consumer-01-Default-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 44F865B78BF241E48A614436 /* Consumer-01-Default-Gradient.icon */; };
 		5216534C2EEF428100542631 /* Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5216534B2EEF428100542631 /* Default.icon */; };
-		5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = 413787CFC86842208C1B2F8B /* Spryte.icon */; };
-		696A9BD243424F00826A1E61 /* Manager-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */; };
-		6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */; };
-		75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */; };
-		7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */; };
-		943F48C36A74405A8288FA49 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */ = {isa = PBXBuildFile; fileRef = 198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */; };
-		9C30C69A9FC2401985520017 /* DoorDash-Consumer-App.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */; };
-		BCE742C4D9AB4DFCB19D7686 /* Manager-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */; };
-		C09408C37FB240E9B5A83050 /* Manager-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */; };
-		C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */; };
-		D84768A33164469182F9ED47 /* Manager-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */; };
-		D938A74826C34E66B6DBCA83 /* Dasher-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */; };
-		DBB67A7B40274739B030CB72 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */; };
-		FC604D6BB542494E868F2D46 /* Manager-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
-		0EA467C8479E4BD2AC1C505C /* Dasher.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Dasher.icon; sourceTree = "<group>"; };
-		11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
-		198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-FF3008-.icon"; sourceTree = "<group>"; };
-		27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
-		2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "DoorDash-Consumer-App.icon"; sourceTree = "<group>"; };
-		397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
-		413787CFC86842208C1B2F8B /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Spryte.icon; sourceTree = "<group>"; };
+		E688786690E04D1FB2BD630A /* Spryte.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Spryte.icon"; sourceTree = "<group>"; };
+		97CE5E60EFC4481D9CBB2CE1 /* Manager-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		15536C4C253C401A8C5E4CC4 /* Manager-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
+		0757722595A54CC6B9C2E095 /* Manager-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		EF1758AC9E094D77BD4A63BF /* Manager-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
+		26D8A5A623004745AF7A189B /* Manager-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		83E6176B21C24CAD89422084 /* Manager-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
+		786EA1EF554E4B2F9541FDC5 /* DoorDash-Consumer-App.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "DoorDash-Consumer-App.icon"; sourceTree = "<group>"; };
+		5708331D8C2F4EFAA89F49E7 /* Dasher.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher.icon"; sourceTree = "<group>"; };
+		535AF31009904D10AAC862BC /* Dasher-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		07090EC7ACD2416499E107DE /* Dasher-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
+		837B6CC66FE54FA99D893ABB /* Dasher-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		C87EE735460D4C158AE1D97D /* Dasher-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
+		AA66578EBFA84A2E9BEA93E0 /* Dasher-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		BE00CB36CB884CC1A654E15D /* Dasher-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
+		BF3F3066CE7740F99835DA9F /* Consumer-mix-and-match.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-mix-and-match.icon"; sourceTree = "<group>"; };
+		A170CCE8DC2E4A99A5E31C38 /* Consumer-FF3008.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-FF3008.icon"; sourceTree = "<group>"; };
+		E5A89E911C344CE28A790506 /* Consumer-EB1700.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-EB1700.icon"; sourceTree = "<group>"; };
+		D4EDB7302688470D9581BBE8 /* Consumer-03-No-Gradient-FF3008-.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-FF3008-.icon"; sourceTree = "<group>"; };
+		99F4F2BF8F154FD9B16A59C6 /* Consumer-03-No-Gradient-EB4628.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-EB4628.icon"; sourceTree = "<group>"; };
+		7C1A8CD852C746B39CD469C5 /* Consumer-02-Soft-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-02-Soft-Gradient.icon"; sourceTree = "<group>"; };
+		44F865B78BF241E48A614436 /* Consumer-01-Default-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-01-Default-Gradient.icon"; sourceTree = "<group>"; };
 		5216534B2EEF428100542631 /* Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Default.icon; sourceTree = "<group>"; };
 		52D2EF5C2EEDC1D5003D4E85 /* Spryte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spryte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D2EFE12EEDE000003D4E85 /* Instructions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Instructions.md; sourceTree = "<group>"; };
-		658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-01-Default-Gradient.icon"; sourceTree = "<group>"; };
-		6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
-		6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-EB4628.icon"; sourceTree = "<group>"; };
-		C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
-		F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-02-Soft-Gradient.icon"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -76,25 +82,28 @@
 		52D2EF532EEDC1D5003D4E85 = {
 			isa = PBXGroup;
 			children = (
-				198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */,
-				9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */,
-				413787CFC86842208C1B2F8B /* Spryte.icon */,
-				6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */,
-				F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */,
-				C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */,
-				2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */,
-				F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */,
-				11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */,
-				2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */,
-				0EA467C8479E4BD2AC1C505C /* Dasher.icon */,
-				C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */,
-				397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */,
-				27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */,
-				0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */,
-				CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */,
-				6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */,
-				F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */,
-				658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */,
+				E688786690E04D1FB2BD630A /* Spryte.icon */,
+				97CE5E60EFC4481D9CBB2CE1 /* Manager-03-No-Gradient-Inverted.icon */,
+				15536C4C253C401A8C5E4CC4 /* Manager-03-No-Gradient-Default.icon */,
+				0757722595A54CC6B9C2E095 /* Manager-02-Soft-Gradient-Inverted.icon */,
+				EF1758AC9E094D77BD4A63BF /* Manager-02-Soft-Gradient-Default.icon */,
+				26D8A5A623004745AF7A189B /* Manager-01-Default-Gradient-Inverted.icon */,
+				83E6176B21C24CAD89422084 /* Manager-01-Default-Gradient-Default.icon */,
+				786EA1EF554E4B2F9541FDC5 /* DoorDash-Consumer-App.icon */,
+				5708331D8C2F4EFAA89F49E7 /* Dasher.icon */,
+				535AF31009904D10AAC862BC /* Dasher-03-No-Gradient-Inverted.icon */,
+				07090EC7ACD2416499E107DE /* Dasher-03-No-Gradient-Default.icon */,
+				837B6CC66FE54FA99D893ABB /* Dasher-02-Soft-Gradient-Inverted.icon */,
+				C87EE735460D4C158AE1D97D /* Dasher-02-Soft-Gradient-Default.icon */,
+				AA66578EBFA84A2E9BEA93E0 /* Dasher-01-Default-Gradient-Inverted.icon */,
+				BE00CB36CB884CC1A654E15D /* Dasher-01-Default-Gradient-Default.icon */,
+				BF3F3066CE7740F99835DA9F /* Consumer-mix-and-match.icon */,
+				A170CCE8DC2E4A99A5E31C38 /* Consumer-FF3008.icon */,
+				E5A89E911C344CE28A790506 /* Consumer-EB1700.icon */,
+				D4EDB7302688470D9581BBE8 /* Consumer-03-No-Gradient-FF3008-.icon */,
+				99F4F2BF8F154FD9B16A59C6 /* Consumer-03-No-Gradient-EB4628.icon */,
+				7C1A8CD852C746B39CD469C5 /* Consumer-02-Soft-Gradient.icon */,
+				44F865B78BF241E48A614436 /* Consumer-01-Default-Gradient.icon */,
 				5216534B2EEF428100542631 /* Default.icon */,
 				52D2EFE12EEDE000003D4E85 /* Instructions.md */,
 				52D2EF5E2EEDC1D5003D4E85 /* Spryte */,
@@ -175,25 +184,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943F48C36A74405A8288FA49 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */,
-				414D4DCBA7A14F42AD15C4A7 /* Consumer-03-No-Gradient-EB4628.icon in Resources */,
-				5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */,
-				FC604D6BB542494E868F2D46 /* Manager-03-No-Gradient-Inverted.icon in Resources */,
-				696A9BD243424F00826A1E61 /* Manager-03-No-Gradient-Default.icon in Resources */,
-				DBB67A7B40274739B030CB72 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */,
-				C09408C37FB240E9B5A83050 /* Manager-02-Soft-Gradient-Default.icon in Resources */,
-				D84768A33164469182F9ED47 /* Manager-01-Default-Gradient-Inverted.icon in Resources */,
-				BCE742C4D9AB4DFCB19D7686 /* Manager-01-Default-Gradient-Default.icon in Resources */,
-				9C30C69A9FC2401985520017 /* DoorDash-Consumer-App.icon in Resources */,
-				0CF760AC450A4A4F992E7575 /* Dasher.icon in Resources */,
-				D938A74826C34E66B6DBCA83 /* Dasher-03-No-Gradient-Inverted.icon in Resources */,
-				410491B461414F2394EDDDBB /* Dasher-03-No-Gradient-Default.icon in Resources */,
-				2A5B6C67E54C43B8A2510D9A /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */,
-				C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */,
-				4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */,
-				6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */,
-				75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */,
-				7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */,
+				92FEB26295424EE5B04DB418 /* Spryte.icon in Resources */,
+				9EBA16FA288B4EE9BC847E79 /* Manager-03-No-Gradient-Inverted.icon in Resources */,
+				23DAB8037C254376925A453E /* Manager-03-No-Gradient-Default.icon in Resources */,
+				ABB79AFA138E48C981F52966 /* Manager-02-Soft-Gradient-Inverted.icon in Resources */,
+				8F0370E9A6694BBE8E08CB85 /* Manager-02-Soft-Gradient-Default.icon in Resources */,
+				957A273A1FEB44FEA2477645 /* Manager-01-Default-Gradient-Inverted.icon in Resources */,
+				B8C55D5B8E414321BB940A7A /* Manager-01-Default-Gradient-Default.icon in Resources */,
+				9834B0AED1724CCB888CFF80 /* DoorDash-Consumer-App.icon in Resources */,
+				A29A499B0E644DD6A2FBAF33 /* Dasher.icon in Resources */,
+				6AF2E4ABE08B48E98D8B489F /* Dasher-03-No-Gradient-Inverted.icon in Resources */,
+				D0951B24221A4B03B1FC3BAA /* Dasher-03-No-Gradient-Default.icon in Resources */,
+				534CCF1EEB044D4AB1DCF266 /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */,
+				CB74962AA4E942E186CC685E /* Dasher-02-Soft-Gradient-Default.icon in Resources */,
+				9C067D9129254D729114E57F /* Dasher-01-Default-Gradient-Inverted.icon in Resources */,
+				8C2F648BFB4140B6BF5D9651 /* Dasher-01-Default-Gradient-Default.icon in Resources */,
+				EA954BADCF1A49C8A2815FC3 /* Consumer-mix-and-match.icon in Resources */,
+				CF73E81994A24946A61FB5F7 /* Consumer-FF3008.icon in Resources */,
+				E5299ABF3E25445F98652209 /* Consumer-EB1700.icon in Resources */,
+				DECB9E5C818249CCA4A10077 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */,
+				9183DB5B7A1642B8A1219F1F /* Consumer-03-No-Gradient-EB4628.icon in Resources */,
+				37A6B575FD4B4A6F923F2AAB /* Consumer-02-Soft-Gradient.icon in Resources */,
+				204D23D4EA514576BBF22679 /* Consumer-01-Default-Gradient.icon in Resources */,
 				5216534C2EEF428100542631 /* Default.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = K2XB837E84;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -407,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = K2XB837E84;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
