@@ -31,8 +31,8 @@
     }
 ,
     {
-      "name": "Consumer",
-      "icons": ["Consumer-03-No-Gradient","Consumer-01-Default-Gradient","Consumer-02-Soft-Gradient"]
+      "name": "Consumer/Dec 18 2025",
+      "icons": ["Consumer-03-No-Gradient-FF3008-","Consumer-01-Default-Gradient","Consumer-03-No-Gradient-EB4628","Consumer-02-Soft-Gradient"]
     }
 
   ]

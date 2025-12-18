@@ -69,6 +69,86 @@ log_info "Starting icon import from: $ICONS_TO_IMPORT"
 # Create output directories
 mkdir -p "$ICON_SOURCE"
 
+# ============================================
+# Build list of current icons from source
+# ============================================
+CURRENT_ICONS=()
+while IFS= read -r -d '' ICON_PATH; do
+    ICON_FILE=$(basename "$ICON_PATH")
+    ICON_NAME="${ICON_FILE%.icon}"
+    ICON_NAME_SAFE=$(echo "$ICON_NAME" | tr ' ' '-')
+
+    # Handle duplicates with section suffix
+    ICON_DIR=$(dirname "${ICON_PATH#$ICONS_TO_IMPORT/}")
+    if [[ "$ICON_DIR" != "." ]]; then
+        SECTION_SUFFIX=$(basename "$ICON_DIR" | tr ' ' '-')
+        DUPLICATE_COUNT=$(find "$ICONS_TO_IMPORT" -name "$ICON_FILE" -type d 2>/dev/null | wc -l | tr -d ' ')
+        if [[ "$DUPLICATE_COUNT" -gt 1 ]]; then
+            ICON_NAME_SAFE="${ICON_NAME_SAFE}-${SECTION_SUFFIX}"
+        fi
+    fi
+    CURRENT_ICONS+=("$ICON_NAME_SAFE")
+done < <(find "$ICONS_TO_IMPORT" -name "*.icon" -type d -print0 2>/dev/null)
+
+log_info "Found ${#CURRENT_ICONS[@]} icons in source folder"
+
+# ============================================
+# Clean up removed icons
+# ============================================
+log_info "Checking for removed icons..."
+
+# Enable nullglob so empty globs don't cause errors
+setopt nullglob
+
+# Clean up old PNG export folders
+for EXPORT_DIR in "${ICON_SOURCE}"/*-Exports; do
+    [[ -d "$EXPORT_DIR" ]] || continue
+    EXPORT_NAME=$(basename "$EXPORT_DIR" | sed 's/-Exports$//')
+
+    # Check if this icon still exists in source
+    FOUND=false
+    for CURRENT in "${CURRENT_ICONS[@]}"; do
+        if [[ "$CURRENT" = "$EXPORT_NAME" ]]; then
+            FOUND=true
+            break
+        fi
+    done
+
+    if [[ "$FOUND" = false ]]; then
+        log_warn "Removing orphaned exports: $EXPORT_NAME"
+        rm -rf "$EXPORT_DIR"
+    fi
+done
+
+# Clean up old .icon files at project root (except primary icon)
+for ICON_FILE in "${PROJECT_ROOT}"/*.icon; do
+    [[ -d "$ICON_FILE" ]] || continue
+    ICON_BASENAME=$(basename "$ICON_FILE")
+    ICON_NAME="${ICON_BASENAME%.icon}"
+
+    # Never delete primary icon
+    if [[ "$ICON_NAME" = "$PRIMARY_ICON_NAME" ]]; then
+        continue
+    fi
+
+    # Check if this icon still exists in source
+    FOUND=false
+    for CURRENT in "${CURRENT_ICONS[@]}"; do
+        if [[ "$CURRENT" = "$ICON_NAME" ]]; then
+            FOUND=true
+            break
+        fi
+    done
+
+    if [[ "$FOUND" = false ]]; then
+        log_warn "Removing orphaned .icon file: $ICON_BASENAME"
+        rm -rf "$ICON_FILE"
+    fi
+done
+
+# Restore default glob behavior
+unsetopt nullglob
+
 # Use associative arrays (zsh supports these)
 typeset -A SECTIONS
 SECTION_ORDER=()
@@ -194,9 +274,49 @@ if [[ -n "$DERIVED_FILE_DIR" ]]; then
 fi
 
 # ============================================
-# Add new .icon files to Xcode project
+# Clean up removed icons from Xcode project
 # ============================================
 PBXPROJ="${SRCROOT}/Spryte.xcodeproj/project.pbxproj"
+
+if [[ -f "$PBXPROJ" ]]; then
+    log_info "Checking for removed icons in Xcode project..."
+
+    # Find all .icon references in pbxproj
+    while IFS= read -r ICON_REF; do
+        # Extract icon name from the reference line (e.g., "Dasher-01.icon")
+        ICON_NAME=$(echo "$ICON_REF" | sed -n 's/.*\/\* \([^*]*\.icon\) \*\/.*/\1/p')
+        [[ -z "$ICON_NAME" ]] && continue
+
+        # Skip primary icon
+        if [[ "$ICON_NAME" = "${PRIMARY_ICON_NAME}.icon" ]]; then
+            continue
+        fi
+
+        # Check if the .icon file still exists at project root
+        if [[ ! -d "${PROJECT_ROOT}/${ICON_NAME}" ]]; then
+            log_warn "  Removing orphaned Xcode reference: $ICON_NAME"
+
+            # Escape for sed regex
+            ESCAPED_ICON=$(printf '%s' "$ICON_NAME" | sed 's/[[\.*^$()+?{|]/\\&/g')
+
+            # Remove PBXFileReference line
+            sed -i '' "/${ESCAPED_ICON}.*isa = PBXFileReference/d" "$PBXPROJ"
+
+            # Remove PBXBuildFile line
+            sed -i '' "/${ESCAPED_ICON}.*in Resources/d" "$PBXPROJ"
+
+            # Remove from PBXGroup children (the line with just the reference)
+            sed -i '' "/\/\* ${ESCAPED_ICON} \*\/,$/d" "$PBXPROJ"
+
+            # Remove from PBXResourcesBuildPhase files
+            sed -i '' "/${ESCAPED_ICON}.*in Resources.*,$/d" "$PBXPROJ"
+        fi
+    done < <(grep "\.icon.*isa = PBXFileReference" "$PBXPROJ" 2>/dev/null)
+fi
+
+# ============================================
+# Add new .icon files to Xcode project
+# ============================================
 
 if [[ -f "$PBXPROJ" ]]; then
     log_info "Checking for new .icon files to add to Xcode project..."

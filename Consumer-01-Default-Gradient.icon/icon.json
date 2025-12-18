@@ -1,18 +1,16 @@
 {
-  "fill" : "system-light",
+  "fill" : {
+    "automatic-gradient" : "srgb:1.00000,0.18824,0.03137,1.00000"
+  },
   "groups" : [
     {
+      "blur-material" : 0.5,
       "layers" : [
         {
-          "fill-specializations" : [
-            {
-              "appearance" : "tinted",
-              "value" : {
-                "solid" : "extended-gray:1.00000,1.00000"
-              }
-            }
-          ],
-          "image-name" : "1 - Layer.svg",
+          "fill" : {
+            "solid" : "extended-gray:1.00000,1.00000"
+          },
+          "image-name" : "1 - Layer 2.svg",
           "name" : "1 - Layer"
         }
       ],
@@ -20,22 +18,10 @@
         "kind" : "neutral",
         "opacity" : 0.5
       },
-      "specular" : true,
-      "translucency-specializations" : [
-        {
-          "value" : {
-            "enabled" : true,
-            "value" : 0.5
-          }
-        },
-        {
-          "appearance" : "tinted",
-          "value" : {
-            "enabled" : true,
-            "value" : 0.5
-          }
-        }
-      ]
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
     }
   ],
   "supported-platforms" : {

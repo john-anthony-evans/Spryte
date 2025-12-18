@@ -10,6 +10,7 @@
 		0CF760AC450A4A4F992E7575 /* Dasher.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0EA467C8479E4BD2AC1C505C /* Dasher.icon */; };
 		2A5B6C67E54C43B8A2510D9A /* Dasher-02-Soft-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = 27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */; };
 		410491B461414F2394EDDDBB /* Dasher-03-No-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */; };
+		414D4DCBA7A14F42AD15C4A7 /* Consumer-03-No-Gradient-EB4628.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */; };
 		4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */; };
 		5216534C2EEF428100542631 /* Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5216534B2EEF428100542631 /* Default.icon */; };
 		5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */ = {isa = PBXBuildFile; fileRef = 413787CFC86842208C1B2F8B /* Spryte.icon */; };
@@ -17,10 +18,10 @@
 		6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */; };
 		75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */; };
 		7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */; };
+		943F48C36A74405A8288FA49 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */ = {isa = PBXBuildFile; fileRef = 198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */; };
 		9C30C69A9FC2401985520017 /* DoorDash-Consumer-App.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */; };
 		BCE742C4D9AB4DFCB19D7686 /* Manager-01-Default-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */; };
 		C09408C37FB240E9B5A83050 /* Manager-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */; };
-		C2212BE683044CBAB8FBDF3C /* Consumer-03-No-Gradient.icon in Resources */ = {isa = PBXBuildFile; fileRef = 2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */; };
 		C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */; };
 		D84768A33164469182F9ED47 /* Manager-01-Default-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = F37C184EAD5B4ADF8ADC392B /* Manager-01-Default-Gradient-Inverted.icon */; };
 		D938A74826C34E66B6DBCA83 /* Dasher-03-No-Gradient-Inverted.icon in Resources */ = {isa = PBXBuildFile; fileRef = C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */; };
@@ -32,8 +33,8 @@
 		0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
 		0EA467C8479E4BD2AC1C505C /* Dasher.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Dasher.icon; sourceTree = "<group>"; };
 		11485DF133E84FE08BF59127 /* Manager-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
+		198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-FF3008-.icon"; sourceTree = "<group>"; };
 		27CAC4C7FC554EB09213E2BD /* Dasher-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
-		2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient.icon"; sourceTree = "<group>"; };
 		2D0D748D96C14ADD8BB59BFA /* Manager-02-Soft-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Default.icon"; sourceTree = "<group>"; };
 		2D7223F52EEF4E7C9BCB211B /* DoorDash-Consumer-App.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "DoorDash-Consumer-App.icon"; sourceTree = "<group>"; };
 		397F9871F85B455F811C511E /* Dasher-03-No-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Default.icon"; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-01-Default-Gradient.icon"; sourceTree = "<group>"; };
 		6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Default.icon"; sourceTree = "<group>"; };
 		6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
+		9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Consumer-03-No-Gradient-EB4628.icon"; sourceTree = "<group>"; };
 		C54C9F0E97B84F2EA46FC1D2 /* Dasher-03-No-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-03-No-Gradient-Inverted.icon"; sourceTree = "<group>"; };
 		C7E94E986C8041A4934EEC12 /* Manager-02-Soft-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Manager-02-Soft-Gradient-Inverted.icon"; sourceTree = "<group>"; };
 		CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = "Dasher-01-Default-Gradient-Inverted.icon"; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		52D2EF532EEDC1D5003D4E85 = {
 			isa = PBXGroup;
 			children = (
+				198E7DCB14144D6B8E90CBEC /* Consumer-03-No-Gradient-FF3008-.icon */,
+				9867E09CD6014BCA80FEE1C5 /* Consumer-03-No-Gradient-EB4628.icon */,
 				413787CFC86842208C1B2F8B /* Spryte.icon */,
 				6A9235AF73754A8E9C124E7A /* Manager-03-No-Gradient-Inverted.icon */,
 				F330F5F62181411BA4CD1A52 /* Manager-03-No-Gradient-Default.icon */,
@@ -89,7 +93,6 @@
 				0DA10F18098045B3B5A87460 /* Dasher-02-Soft-Gradient-Default.icon */,
 				CFA80CEF75DA4DA1AFCA91B5 /* Dasher-01-Default-Gradient-Inverted.icon */,
 				6866A03597F34BFDAFF07E76 /* Dasher-01-Default-Gradient-Default.icon */,
-				2D02753B34334508BA1E21B7 /* Consumer-03-No-Gradient.icon */,
 				F722552B98124110B6DFE30A /* Consumer-02-Soft-Gradient.icon */,
 				658C5FFFE4E347E8BA53A408 /* Consumer-01-Default-Gradient.icon */,
 				5216534B2EEF428100542631 /* Default.icon */,
@@ -172,6 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943F48C36A74405A8288FA49 /* Consumer-03-No-Gradient-FF3008-.icon in Resources */,
+				414D4DCBA7A14F42AD15C4A7 /* Consumer-03-No-Gradient-EB4628.icon in Resources */,
 				5F439074FBF844C6A9E90307 /* Spryte.icon in Resources */,
 				FC604D6BB542494E868F2D46 /* Manager-03-No-Gradient-Inverted.icon in Resources */,
 				696A9BD243424F00826A1E61 /* Manager-03-No-Gradient-Default.icon in Resources */,
@@ -187,7 +192,6 @@
 				C851AE0180424195A0D5B0FF /* Dasher-02-Soft-Gradient-Default.icon in Resources */,
 				4C056A22824044A1901806D9 /* Dasher-01-Default-Gradient-Inverted.icon in Resources */,
 				6B438245788F4D21803108DD /* Dasher-01-Default-Gradient-Default.icon in Resources */,
-				C2212BE683044CBAB8FBDF3C /* Consumer-03-No-Gradient.icon in Resources */,
 				75B8244328C04A989A2DD794 /* Consumer-02-Soft-Gradient.icon in Resources */,
 				7A309442695B47BD94FDBE53 /* Consumer-01-Default-Gradient.icon in Resources */,
 				5216534C2EEF428100542631 /* Default.icon in Resources */,
